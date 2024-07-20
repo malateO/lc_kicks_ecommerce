@@ -231,6 +231,12 @@ header li > a {
 * b. Header Nav
 ----------------------------*/
 
+.header-nav {
+  padding: 0.5em 0;
+  margin-bottom: 1.5em;
+  border-bottom: 1px solid var(--border-color);
+}
+
 .trigger {
   font-size: 1.5em;
   display: flex;
@@ -313,6 +319,14 @@ nav .fly-item {
   border-radius: var(--percent50);
 }
 
+.mega .flexcol {
+  flex: 1;
+  min-width: 180px;
+  padding-right: 2.5em;
+  margin-bottom: 1.5em;
+  z-index: 1;
+}
+
 @media screen and (min-width: 992px) {
   .container {
     padding: 0 2em;
@@ -338,5 +352,44 @@ nav .fly-item {
 
   .header-nav .right li > a {
     margin-left: 1em;
+  }
+
+  /* Mega Menu */
+
+  nav .mega {
+    position: absolute;
+    width: var(--percent100);
+    height: auto;
+    top: auto;
+    left: 0;
+    right: 0;
+    padding: 2.5em;
+    line-height: 2em;
+    background-color: var(--light-bg-color);
+    box-shadow: rgb(0, 0, 0 / 20%) 0 30px 20px -30px;
+    z-index: 100;
+  }
+
+  nav .mega .wrapper {
+    display: flex;
+  }
+
+  nav .mega h4 {
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  nav .mega ul {
+    font-size: var(--font-small);
+  }
+
+  nav .mega .women-brands {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 180px;
+  }
+
+  nav .mega .women-brands li {
+    min-width: 80px;
   }
 }
