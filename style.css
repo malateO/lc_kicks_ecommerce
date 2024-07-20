@@ -169,6 +169,10 @@ h4 {
   padding: 0 0.75em 0 0;
 }
 
+.mobile-hide {
+  display: none;
+}
+
 /*---------------------------
 * 01. HEADER
 ----------------------------*/
@@ -286,16 +290,53 @@ nav .fly-item {
   top: 50%;
   margin-top: -24px;
   width: 30px;
+  height: 10px;
   border-radius: 3px;
   right: -32px;
   background-color: var(--primary-color);
+}
+
+.header-nav .right {
+  position: relative;
+  margin-left: auto;
+}
+
+.header-nav .right .icon-large {
+  position: relative;
+}
+
+.header-nav .right .fly-item {
+  top: 0;
+  right: 16px;
+  width: 16px;
+  background-color: var(--secondary-dark-color);
+  border-radius: var(--percent50);
 }
 
 @media screen and (min-width: 992px) {
   .container {
     padding: 0 2em;
   }
+
   .desktop-hide {
     display: none;
+  }
+
+  .mobile-hide {
+    display: block;
+  }
+
+  .logo a {
+    margin-right: 2em;
+  }
+
+  .header-nav {
+    padding: 0;
+    margin: 0;
+    border-bottom: 0;
+  }
+
+  .header-nav .right li > a {
+    margin-left: 1em;
   }
 }
