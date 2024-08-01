@@ -280,11 +280,11 @@ h4 {
   display: none;
 }
 
-.header-top .right ul ul li a {
+:where(.header-top, .thetop-nav) .right ul ul li a {
   padding: 0.25em 1em;
 }
 
-.header-top .right ul ul li.current a {
+:where(.header-top, .thetop-nav) .right ul ul li.current a {
   background-color: var(--border-color);
 }
 
@@ -497,7 +497,7 @@ form.search button:hover {
 
 /*---------------------------
 * 01. HEADER
-* d. Responsive MENU - Off Canvas
+* e. Responsive MENU - Off Canvas
 ----------------------------*/
 
 .site-off {
@@ -507,6 +507,16 @@ form.search button:hover {
   background-color: var(--white-color);
   overflow-y: auto;
   z-index: 1000;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.4s, visibility 0.4s;
+  will-change: transform, visibility;
+}
+
+.showmenu .site-off {
+  transform: translateX(0);
+  visibility: visible;
+  transform: transform 0.4s 0s, visibility 0s 0s;
 }
 
 .off-canvas {
@@ -563,6 +573,15 @@ form.search button:hover {
   font-weight: var(--fw3);
   line-height: 20px;
   padding-left: 3em;
+
+  height: auto;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.off-canvas .expand > :where(ul, .mega) {
+  max-height: 2000px;
 }
 
 .off-canvas .thetop-nav ul,
@@ -572,6 +591,7 @@ form.search button:hover {
   font-size: var(--font-small);
   line-height: 36px;
   padding-top: 1.25em;
+  margin: 1.25em 0;
   border-top: 1px solid var(--border-color);
 }
 
