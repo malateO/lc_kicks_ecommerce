@@ -912,6 +912,11 @@ form.search button:hover {
   background-color: var(--secondary-color);
 }
 
+.products .item {
+  display: flex;
+  position: relative;
+}
+
 /*---------------------------
 * 04. PRODUCT
 * b. BIG product
